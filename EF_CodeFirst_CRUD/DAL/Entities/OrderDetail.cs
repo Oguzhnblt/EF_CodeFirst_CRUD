@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EF_CodeFirst_CRUD.DAL.Entities
+{
+    public class OrderDetail
+    {
+        public int OrderDetailId { get; set; }
+        public  decimal? Price { get; set; }
+        public int OrderId { get; set; }
+
+        public float? Quantity { get; set; }
+        public float? Discount { get; set; }
+
+        // Bir sipariş detatı mutlaka bir siparişe bağlanması gerekmektedir.
+
+
+        public virtual Order Order { get; set; }
+        public int ProductId { get; set; }
+        public virtual Product Product { get; set; }
+    }
+}
